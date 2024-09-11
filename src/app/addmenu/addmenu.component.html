@@ -1,87 +1,97 @@
 <div class="top mt-3">
-  <p class="text-secondary guide mb-4">Meu > Manage Menu > Add Menu</p>
+  <p class="text-secondary guide mb-4">Menu > Manage Menu > Add Menu</p>
   <div class="my-ct-cls container mt-5">
-    <div class="row">
-      <div class="col-2">
-        <label class="fw-bold">Item Name</label>
-      </div>
-      <div class="col-10">
-        <div class="input-group mb-3 w-50">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Item Name"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-          />
+    <form [formGroup]="menuForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-2">
+          <label class="fw-bold">Item Name</label>
+        </div>
+        <div class="col-10">
+          <div class="input-group mb-3 w-50">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="itemName"
+              placeholder="Item Name"
+              required
+            />
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="row">
-      <div class="col-2">
-        <label class="fw-bold">Item Price</label>
-      </div>
-      <div class="col-10">
-        <div class="input-group mb-3 w-50">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Item Price"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-          />
+      <div class="row">
+        <div class="col-2">
+          <label class="fw-bold">Item Price</label>
+        </div>
+        <div class="col-10">
+          <div class="input-group mb-3 w-50">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="itemPrice"
+              placeholder="Item Price"
+              required
+            />
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-2">
-        <label class="fw-bold">Description</label>
-      </div>
-      <div class="col-10">
-        <div class="input-group mb-3 w-50">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Description"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-          />
+
+      <div class="row">
+        <div class="col-2">
+          <label class="fw-bold">Description</label>
+        </div>
+        <div class="col-10">
+          <div class="input-group mb-3 w-50">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="description"
+              placeholder="Description"
+              required
+            />
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-2">
-        <label class="fw-bold">Category Name</label>
-      </div>
-      <div class="col-10">
-        <div class="input-group mb-3 w-50">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Category Name"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-          />
+
+      <div class="row">
+        <div class="col-2">
+          <label class="fw-bold">Category Name</label>
+        </div>
+        <div class="col-10">
+          <div class="input-group mb-3 w-50">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="categoryName"
+              placeholder="Category Name"
+              required
+            />
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-2">
-        <label class="fw-bold">Image Url</label>
-      </div>
-      <div class="col-10">
-        <div class="input-group mb-3 w-50">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Image Url"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-          />
+
+      <div class="row">
+        <div class="col-2">
+          <label class="fw-bold">Image Url</label>
         </div>
-        <button class="btn btn-primary float right">Save</button>
+        <div class="col-10">
+          <div class="input-group mb-3 w-50">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="imageUrl"
+              placeholder="Image Url"
+              required
+            />
+          </div>
+        </div>
       </div>
-    </div>
+
+      <div class="row">
+        <div class="col-10 offset-2">
+          <button class="btn btn-primary" type="submit">Save</button>
+        </div>
+      </div>
+    </form>
   </div>
 </div>

@@ -21,6 +21,11 @@ import { ManageofferComponent } from './manageoffer/manageoffer.component';
 import { AddofferComponent } from './addoffer/addoffer.component';
 import { AddmenuComponent } from './addmenu/addmenu.component';
 import { MenuItemadminComponent } from './menu-itemadmin/menu-itemadmin.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MenuService } from './services/menu.service';
+import { MainComponent } from './main/main.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -42,13 +47,18 @@ import { MenuItemadminComponent } from './menu-itemadmin/menu-itemadmin.componen
     ManageofferComponent,
     AddofferComponent,
     AddmenuComponent,
-    MenuItemadminComponent
+    MenuItemadminComponent,
+    MainComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
+
   ],
-  providers: [],
+  providers: [MenuService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

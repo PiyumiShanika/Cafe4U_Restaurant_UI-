@@ -10,18 +10,26 @@ import { OrderviewComponent } from './orderview/orderview.component';
 import { OffersComponent } from './offers/offers.component';
 import { ManageofferComponent } from './manageoffer/manageoffer.component';
 import { AddofferComponent } from './addoffer/addoffer.component';
+import { AboutComponent } from './about/about.component';
+import { SidepanelComponent } from './sidepanel/sidepanel.component';
+import { MainComponent } from './main/main.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
+  {path:'', component:MainComponent},
   {path: 'login', component:LoginComponent},
   {path: 'register', component:RegisterComponent},
   {path: 'addMenu', component:AddmenuComponent},
-  {path: 'menuitems', component:MenuItemadminComponent},
-  {path: 'userManage', component:ManageruserComponent},
+  {path: 'dashboard/menuitems', component:MenuItemadminComponent},
+  {path: 'dashboard/userManage', component:ManageruserComponent},
   {path: 'add-user', component:UseraddComponent},
-  {path: 'manage-orders', component:OrderviewComponent},
+  {path: 'dashboard/manage-orders', component:OrderviewComponent},
   {path: 'add-offers', component:AddofferComponent},
   {path: 'add-offers', component:AddofferComponent},
-  {path: 'manage-offer', component:ManageofferComponent},
+  {path: 'dashboard/manage-offer', component:ManageofferComponent},
+  {path: 'about', component:AboutComponent},
+  {path: 'offers', component:OffersComponent},
+  {path: 'dashboard', component:DashboardComponent}
   
 ];
 

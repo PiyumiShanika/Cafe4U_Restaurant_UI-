@@ -1,12 +1,12 @@
 <div class="top mt-3">
-  <p class="text-secondary guide mb-4">Order > Manage Orders> All Orders</p>
+  <p class="text-secondary guide mb-4">Order > Manage Orders > All Orders</p>
   <table class="table container">
     <thead>
       <tr>
         <th scope="col">#</th>
         <th scope="col">Customer Name</th>
         <th scope="col">Booking type</th>
-        <th scope="col">Number of prople</th>
+        <th scope="col">Number of people</th>
         <th scope="col">Date</th>
         <th scope="col">Time</th>
         <th scope="col">Payment Status</th>
@@ -14,28 +14,18 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Piyumi</td>
-        <td>Dien-In</td>
-        <td>05</td>
-        <td>23/05/2024</td>
-        <td>16.00</td>
-        <td class="text-danger">Pending</td>
-        <td>
-          <button class="btn btn-success">Confirm</button>
+      <tr *ngFor="let reservation of reservations; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ reservation.customerName }}</td>
+        <td>{{ reservation.type }}</td>
+        <td>{{ reservation.numberOfPeople || 'N/A' }}</td>
+        <td>{{ reservation.date }}</td>
+        <td>{{ reservation.time }}</td>
+        <td [ngClass]="{'text-danger': reservation.paymentStatus === 'Pending', 'text-success': reservation.paymentStatus === 'Paid'}">
+          {{ reservation.status }}
         </td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Pala</td>
-        <td>take-Away</td>
-        <td>Null</td>
-        <td>23/05/2024</td>
-        <td>16.30</td>
-        <td class="text-danger">Panding</td>
         <td>
-          <button class="btn btn-success">Confirm</button>
+          <button class="btn btn-success" (click)="confirmReservation(reservation.id)">Confirm</button>
         </td>
       </tr>
     </tbody>

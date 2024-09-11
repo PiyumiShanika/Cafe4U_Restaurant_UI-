@@ -1,11 +1,18 @@
+<app-sidepanel></app-sidepanel>
 <div class="top mt-3">
   <p class="text-secondary guide">Manage-Menu > Menu-items</p>
   <a class="btn btn-primary" [routerLink]="['/addMenu']">Add item</a>
-  <div class="main">
-    <app-itemcard></app-itemcard>
-    <app-itemcard></app-itemcard>
-    <app-itemcard></app-itemcard>
-    <app-itemcard></app-itemcard>
+
+  <!-- Loop over each category -->
+  <div *ngFor="let category of categories" class="category-section mt-4">
+    <h3 class="category-name">{{ category.categoryName }}</h3> <!-- Category Name -->
+
+    <div class="main">
+      <!-- Loop over each menu item within the current category -->
+      <div *ngFor="let item of category.menuItems">
+        <app-itemcard [menuItem]="item"></app-itemcard>
+      </div>
+    </div>
   </div>
 </div>
 <router-outlet></router-outlet>

@@ -4,18 +4,15 @@
   </div>
   <div class="main-images">
     <img
-      id="blue"
+    id="blue"
       class="blue active"
-      src="https://yaluyalu.lk/cdn/shop/products/kottu_82c8c193-56fb-4074-9414-6cf6520e077b.png?v=1679906619"
-      alt="blue"
+      [src]="menuItem.imageUrl"
+      [alt]="menuItem.itemName"
     />
   </div>
   <div class="shoe-details">
-    <span class="shoe_name">Chicken kottu</span>
-    <p>
-      Lorem ipsum dolor sit lorenm i amet, consectetur adipisicing elit. Eum,
-      ea, ducimus!
-    </p>
+    <span class="shoe_name">{{ menuItem.itemName }}</span>
+    <p>{{ menuItem.description }}</p>
     <div class="stars">
       <i class="bx bxs-star"></i>
       <i class="bx bxs-star"></i>
@@ -25,13 +22,12 @@
     </div>
   </div>
   <div class="color-price">
-    <div class="color-option">
+    <!-- <div class="color-option">
       <i class="fa-solid fa-trash-can dtlicon"></i>
       <i class="fa-solid fa-pen editbtn"></i>
-    </div>
+    </div> -->
     <div class="price">
-      <span class="price_num">Rs1000.00</span>
-      <span class="price_letter">One Thousend</span>
+      <span class="price_num">Rs{{ menuItem.itemPrice }}</span>
     </div>
   </div>
 </div>
